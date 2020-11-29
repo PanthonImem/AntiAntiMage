@@ -171,7 +171,7 @@ class FilteredList extends React.Component{
             {/*Right Pane contains all the cards and filtering/sorting options*/}
             <div className = 'RightPane'>
                 {/*Filter Attribute bar*/}
-                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.2vw', paddingBottom: '5px', paddingTop: '5px'}}>
+                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.5vh', paddingBottom: '5px', paddingTop: '5px'}}>
                     <Navbar.Brand>Attribute</Navbar.Brand>
                     <Nav className="mr-auto">
                     <Nav.Item><Nav.Link eventKey="All" onSelect={this.onSelectFilterAttribute}>All</Nav.Link></Nav.Item>
@@ -182,7 +182,7 @@ class FilteredList extends React.Component{
                 </Navbar>
 
                 {/*Filter Role bar*/}
-                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.2vw', paddingBottom: '5px', paddingTop: '5px'}}>
+                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.5vh', paddingBottom: '5px', paddingTop: '5px'}}>
                     <Navbar.Brand>Role</Navbar.Brand>
                     <Nav className="mr-auto">
                     <Nav.Item><Nav.Link eventKey="All" onSelect={this.onSelectFilterRole}>All</Nav.Link></Nav.Item>
@@ -192,7 +192,7 @@ class FilteredList extends React.Component{
                 </Navbar>
 
                 {/*Sort bar*/}
-                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.2vw', paddingBottom: '5px', paddingTop: '5px'}}>
+                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.5vh', paddingBottom: '5px', paddingTop: '5px'}}>
                     <Navbar.Brand>Sort</Navbar.Brand>
                     <Nav className="mr-auto">
                     <Nav.Item><Nav.Link eventKey="Name" onSelect={this.onSelectSort}>Name</Nav.Link></Nav.Item>

@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
-import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
 class DisplayAgg extends React.Component{
     constructor(props) {
