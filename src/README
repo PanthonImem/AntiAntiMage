@@ -1,0 +1,57 @@
+README
+The Anti-Antimage App
+
+Background: Dota 2 is a popular video game where you play as a team of 5 against the opponent team.
+Each person chooses a character out of 119 available heroes. 
+One particular hero called Antimage is among the universally hated characters to play against as the hero is very elusive. 
+Thus this app is created with the intention of being an antimage counterpicking tool -- displaying the percent advantage 
+your team lineup has against Antimage. 
+
+Frontend Framework: React Bootstrap
+
+Class Organization
+App.js --(List of items)--> FilteredList.jsx --(Aggregator State)-----------------> DisplayAgg.jsx
+                                             --(List of filtered & sorted items)--> DisplayList.jsx
+
+App.js 
+    Contains the header of the app(The static HTML elements)
+    It calls FilteredList on the list of available heroes in the app(currently only support 12 out of 118 heroes)
+
+FilteredList.js
+    This class contains most of the other HTML structure like left-right split.
+    It also contains all the functions handling sorting/filtering.
+    This class calls DisplayAgg.jsx to display the aggregator and DisplayList.jsx to display the items card.
+
+    State Representation
+        Part 1: aggregator
+        state.agg
+        The aggregator is a list of fixed length 5 (You can only have 5 heroes in a team in Dota 2).
+        It is either filled with a dummy item for when it is empty, or the same item.
+        The aggregator is passed to DisplayAgg for display. 
+
+        Part 2: Filtering/Sorting Config
+        state.attribute, state.role, state.sort 
+        These three state fields contain the current configuration for sorting/filtering.
+
+DisplayAgg.jsx 
+    Input: state.Agg, removeFromAgg function 
+    This class takes in an aggregator state, sums up the total advantage, and display the state of the aggregator.
+    It also inherits removeFromAgg function from FilteredList.jsx, which is binds to the remove button for removing item from. 
+
+DisplayList.jsx 
+    Input: list of sorted/filtered items , addToAgg function 
+    This class takes in a list of items and display each of the element in card format.
+    It also inherits addToAgg function from FilteredList.jsx, which is binds to the add to draft button for adding item to aggregator. 
+
+Interaction and State
+1) Filter/Sort Navbar
+    when you click on an item on the navbar, the state representing current sort/filter configuration changes.
+
+2) Add to Draft button
+    when you click on this button on a hero's card, the hero is added to the first empty slot on the aggregator state.
+
+3) Remove from Draft button
+    when you click on this button on the aggregator display, the hero is removed from the state and all subsequent items are shifted up
+
+4) Clear all from aggregator
+    when you click on this button, the aggregator state is set back to original(All None).
