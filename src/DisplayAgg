@@ -1,0 +1,21 @@
+import React from 'react';
+
+class DisplayAgg extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            attribute: 'All',
+            role: 'All',
+            sort: 'Name',
+            agg: ['None','None','None','None','None'],
+        };
+    }
+    render(){
+        return (
+            <>
+            </>
+        );
+    }
+}
+export default DisplayAgg;
+/*  <li>{item.name}, {item.attribute}, {item.advantage}, <Image src={item.image} thumbnail /></li>)}          */

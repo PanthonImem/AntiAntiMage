@@ -3,12 +3,10 @@ import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 class DisplayAgg extends React.Component{
-    constructor(props) {
-        super(props);
-    }
+    
     render(){
         var mysum = 0;
-        {/* Calculate total advantage from aggregator*/}
+        /* Calculate total advantage from aggregator*/
         var i = 0;
         for(i = 0; i < 5; i++){
             if(this.props.list[i]!=='None'){

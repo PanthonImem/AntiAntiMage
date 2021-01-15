@@ -149,8 +149,11 @@ class FilteredList extends React.Component{
             else{
                 return 0;
             }
-        } else if (this.state.sort === 'Advantage') {
-            return item1.Advantage-item2.Advantage
+        } else if (this.state.sort === 'Advantage_2') {
+            return item1.advantage-item2.advantage
+        } 
+        else if (this.state.sort === 'Advantage_1') {
+            return item2.advantage-item1.advantage
         } else {
             return 0
         }
@@ -171,18 +174,18 @@ class FilteredList extends React.Component{
             {/*Right Pane contains all the cards and filtering/sorting options*/}
             <div className = 'RightPane'>
                 {/*Filter Attribute bar*/}
-                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.5vh', paddingBottom: '5px', paddingTop: '5px'}}>
+                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.2vw', paddingBottom: '5px', paddingTop: '5px'}}>
                     <Navbar.Brand>Attribute</Navbar.Brand>
                     <Nav className="mr-auto">
                     <Nav.Item><Nav.Link eventKey="All" onSelect={this.onSelectFilterAttribute}>All</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link eventKey="Str" onSelect={this.onSelectFilterAttribute}>Str</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link eventKey="Agi" onSelect={this.onSelectFilterAttribute}>Agi</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link eventKey="Int" onSelect={this.onSelectFilterAttribute}>Int</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link eventKey="STR" onSelect={this.onSelectFilterAttribute}>Str</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link eventKey="AGI" onSelect={this.onSelectFilterAttribute}>Agi</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link eventKey="INT" onSelect={this.onSelectFilterAttribute}>Int</Nav.Link></Nav.Item>
                     </Nav>
                 </Navbar>
 
                 {/*Filter Role bar*/}
-                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.5vh', paddingBottom: '5px', paddingTop: '5px'}}>
+                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.2vw', paddingBottom: '5px', paddingTop: '5px'}}>
                     <Navbar.Brand>Role</Navbar.Brand>
                     <Nav className="mr-auto">
                     <Nav.Item><Nav.Link eventKey="All" onSelect={this.onSelectFilterRole}>All</Nav.Link></Nav.Item>
@@ -192,11 +195,12 @@ class FilteredList extends React.Component{
                 </Navbar>
 
                 {/*Sort bar*/}
-                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.5vh', paddingBottom: '5px', paddingTop: '5px'}}>
+                <Navbar bg="dark" variant="dark" style={{ fontSize: '1.2vw', paddingBottom: '5px', paddingTop: '5px'}}>
                     <Navbar.Brand>Sort</Navbar.Brand>
                     <Nav className="mr-auto">
                     <Nav.Item><Nav.Link eventKey="Name" onSelect={this.onSelectSort}>Name</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link eventKey="Advantage" onSelect={this.onSelectSort}>Advantage</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link eventKey= "Advantage_1" onSelect={this.onSelectSort}>Advantage</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link eventKey= "Advantage_2" onSelect={this.onSelectSort}>Disadvantage</Nav.Link></Nav.Item>
                     </Nav>
                 </Navbar>
 
